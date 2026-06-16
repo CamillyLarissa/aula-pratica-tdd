@@ -1,5 +1,5 @@
 import pytest
-from calculadora.calculadora import Aluno
+from aluno.aluno import Aluno
 
 
 @pytest.fixture

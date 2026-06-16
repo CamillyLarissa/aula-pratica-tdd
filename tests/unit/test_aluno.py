@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import MagicMock
-from calculadora.calculadora import Aluno
+from aluno.aluno import Aluno
 
 
 # =============================================================

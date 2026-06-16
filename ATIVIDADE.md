@@ -8,7 +8,6 @@
 
 ```bash
 # 1. Entre na pasta do projeto
-cd calculadora_notas
 
 # 2. Crie o ambiente virtual
 python -m venv .venv
@@ -31,15 +30,15 @@ pytest
 ## Estrutura do projeto
 
 ```
-calculadora_notas/
+projeto/
 ├── src/
-│   └── calculadora/
+│   └── aluno/
 │       ├── __init__.py
-│       └── calculadora.py       ← código com bugs (não altere ainda)
+│       └── aluno.py       ← código com bugs (não altere ainda)
 ├── tests/
 │   ├── conftest.py              ← fixtures prontas para usar
 │   └── unit/
-│       └── test_calculadora.py  ← seus testes ficam aqui
+│       └── test_aluno.py  ← seus testes ficam aqui
 ├── pytest.ini
 └── requirements.txt
 ```
@@ -48,7 +47,7 @@ calculadora_notas/
 
 ## O código
 
-A classe `Aluno` já está implementada em `src/calculadora/calculadora.py`:
+A classe `Aluno` já está implementada em `src/aluno/aluno.py`:
 
 ```python
 class Aluno:
@@ -104,14 +103,8 @@ pytest
 # rodar e ver detalhes
 pytest -v
 
-# rodar um teste específico
-pytest tests/unit/test_calculadora.py::test_bug_1_calcular_media
-
-# parar no primeiro erro
-pytest -x
-
 # ver cobertura ao final
-pytest --cov=src/calculadora --cov-report=term-missing
+pytest --cov=src --cov-report=term-missing
 ```
 
 ---
@@ -120,7 +113,7 @@ pytest --cov=src/calculadora --cov-report=term-missing
 
 # PARTE 1 — Encontre os bugs
 
-> **Regra:** abra apenas o arquivo `tests/unit/test_calculadora.py`.
+> **Regra:** abra apenas o arquivo `tests/unit/test_aluno.py`.
 > Não altere o `calculadora.py` ainda.
 
 ---
@@ -135,10 +128,10 @@ Se o teste passar → o teste não está cobrindo o caso certo, tente outro valo
 
 ## Após encontrar todos os bugs
 
-Corrija o `calculadora.py` e rode os testes novamente. Todos devem passar.
+Corrija o `aluno.py` e rode os testes novamente. Todos devem passar.
 
 ```bash
-pytest tests/unit/test_calculadora.py -v
+pytest tests/unit/test_aluno.py -v
 ```
 
 ---
@@ -308,11 +301,11 @@ def test_nao_envia_boletim_aluno_aprovado():
 ## Resultado esperado ao final
 
 ```bash
-pytest --cov=src/calculadora --cov-report=term-missing
+pytest --cov=src/aluno --cov-report=term-missing
 ```
 
 ```
-tests/unit/test_calculadora.py
+tests/unit/test_aluno.py
   test_contar_todos_aprovados            PASSED ✓
   test_contar_todos_reprovados           PASSED ✓
   test_contar_aprovados_misto            PASSED ✓
