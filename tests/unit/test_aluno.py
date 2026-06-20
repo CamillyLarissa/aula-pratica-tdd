@@ -41,6 +41,10 @@ def test_maior_nota_deve_retornar_valor_maximo():
 def test_contar_aprovados_vazio():
     assert contar_aprovados([]) == 0
 
+def test_contar_aprovados_mista():
+    alunos = [Aluno("A", [10, 10, 10, 10]), Aluno("B", [2, 2, 2, 2])]
+    assert contar_aprovados(alunos) == 1
+    
 # Requisito 2 — situacao_final(total_aulas) -> str
 # Escreva os testes ANTES de implementar o método
 
