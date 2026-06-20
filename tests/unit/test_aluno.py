@@ -38,7 +38,8 @@ def test_maior_nota_deve_retornar_valor_maximo():
 
 # Requisito 1 — contar_aprovados(lista_de_alunos) -> int
 # Escreva os testes ANTES de implementar a função
-
+def test_contar_aprovados_vazio():
+    assert contar_aprovados([]) == 0
 
 # Requisito 2 — situacao_final(total_aulas) -> str
 # Escreva os testes ANTES de implementar o método
