@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import MagicMock
-from aluno.aluno import Aluno
+from aluno.aluno import Aluno, contar_aprovados
 
 
 # =============================================================
@@ -44,7 +44,7 @@ def test_contar_aprovados_vazio():
 def test_contar_aprovados_mista():
     alunos = [Aluno("A", [10, 10, 10, 10]), Aluno("B", [2, 2, 2, 2])]
     assert contar_aprovados(alunos) == 1
-    
+
 # Requisito 2 — situacao_final(total_aulas) -> str
 # Escreva os testes ANTES de implementar o método
 

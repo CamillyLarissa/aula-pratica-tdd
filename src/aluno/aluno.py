@@ -20,3 +20,11 @@ class Aluno:
 
     def calcular_media_arredondada(self) -> float:
         return round(sum(self.notas) / len(self.notas))
+
+
+def contar_aprovados(alunos: list) -> int:
+    cont = 0
+    for a in alunos:
+        if a.situacao() == "Aprovado":
+            cont += 1
+    return cont
