@@ -52,6 +52,10 @@ def test_aprovado_limite_25_faltas():
     aluno = Aluno("Camilly", [8, 8, 8, 8], faltas=25)
     assert aluno.situacao_final(100) == "Aprovado"
 
+def test_reprovado_por_faltas_acima_25():
+    aluno = Aluno("Camilly", [8, 8, 8, 8], faltas=26)
+    assert aluno.situacao_final(100) == "Reprovado por falta"
+
 # Requisito 3 — enviar_boletim(email_service)
 # Use MagicMock para simular o serviço de e-mail
 # Escreva os testes ANTES de implementar o método
