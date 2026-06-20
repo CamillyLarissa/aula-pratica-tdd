@@ -27,7 +27,7 @@ class Aluno:
     
     def enviar_boletim(self, email_service):
         if self.situacao() == "Reprovado":
-            email_service.enviar(self.nome, self.calcular_media())
+            email_service.enviar(aluno=self.nome, media=self.calcular_media())
 
 
 def contar_aprovados(alunos: list) -> int:
