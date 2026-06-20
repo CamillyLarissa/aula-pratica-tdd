@@ -48,6 +48,9 @@ def test_contar_aprovados_mista():
 # Requisito 2 — situacao_final(total_aulas) -> str
 # Escreva os testes ANTES de implementar o método
 
+def test_aprovado_limite_25_faltas():
+    aluno = Aluno("Camilly", [8, 8, 8, 8], faltas=25)
+    assert aluno.situacao_final(100) == "Aprovado"
 
 # Requisito 3 — enviar_boletim(email_service)
 # Use MagicMock para simular o serviço de e-mail
