@@ -22,9 +22,8 @@ class Aluno:
         return round(sum(self.notas) / len(self.notas))
     
     def situacao_final(self, total_aulas: int) -> str:
-        if (self.faltas / total_aulas) > 0.25:
-            return "Reprovado por falta"
-        return self.situacao()
+        reprovado_por_falta = (self.faltas / total_aulas) > 0.25
+        return "Reprovado por falta" if reprovado_por_falta else self.situacao()
 
 
 def contar_aprovados(alunos: list) -> int:
