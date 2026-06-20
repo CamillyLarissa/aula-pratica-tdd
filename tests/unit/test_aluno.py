@@ -23,6 +23,14 @@ def test_calcular_media():
 def test_situacao_aprovado():
     aluno = Aluno(nome="Larissa", notas=[6, 6, 6, 6], faltas=12)
     assert aluno.situacao() == "Aprovado"
+
+def test_situacao_reprovado():
+    aluno = Aluno(nome="Carlos", notas=[5, 5, 4, 4], faltas=2)
+    assert aluno.situacao() == "Reprovado"
+
+def test_maior_nota_deve_retornar_valor_maximo():
+    aluno = Aluno("Ana", [5.0, 10.0, 2.0, 8.0])
+    assert aluno.maior_nota() == 10.0
 # =============================================================
 # PARTE 2 — Implemente com TDD
 # Siga o ciclo: 🔴 escreva o teste → 🟢 implemente → 🟡 refatore
