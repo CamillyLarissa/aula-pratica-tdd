@@ -24,6 +24,10 @@ class Aluno:
     def situacao_final(self, total_aulas: int) -> str:
         reprovado_por_falta = (self.faltas / total_aulas) > 0.25
         return "Reprovado por falta" if reprovado_por_falta else self.situacao()
+    
+    def enviar_boletim(self, email_service):
+        if self.situacao() == "Reprovado":
+            email_service.enviar(self.nome, self.calcular_media())
 
 
 def contar_aprovados(alunos: list) -> int:
