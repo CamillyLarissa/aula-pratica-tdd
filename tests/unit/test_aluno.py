@@ -59,3 +59,9 @@ def test_reprovado_por_faltas_acima_25():
 # Requisito 3 — enviar_boletim(email_service)
 # Use MagicMock para simular o serviço de e-mail
 # Escreva os testes ANTES de implementar o método
+
+def test_enviar_boletim_reprovado():
+    mock_servico = MagicMock()
+    aluno = Aluno("Camilly", [2, 2, 2, 2])
+    aluno.enviar_boletim(mock_servico)
+    mock_servico.enviar.assert_called_once()
