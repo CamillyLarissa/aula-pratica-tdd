@@ -23,8 +23,4 @@ class Aluno:
 
 
 def contar_aprovados(alunos: list) -> int:
-    cont = 0
-    for a in alunos:
-        if a.situacao() == "Aprovado":
-            cont += 1
-    return cont
+    return sum(1 for a in alunos if a.situacao() == "Aprovado")
